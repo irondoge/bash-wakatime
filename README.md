@@ -15,13 +15,13 @@ Make sure you have configured wakatime API key in your [~/.wakatime.cfg](https:/
 
   - include the "bash-wakatime.sh" file in your "~/.bashrc" file with this command:
 
-        `. path/to/bash-wakatime.sh`
+    `. path/to/bash-wakatime.sh`
 
-    or this command:
-    
-        `source path/to/bash-wakatime.sh`
+  - or this command:
 
-    But if you already have a PROMPT_COMMAND variable set,
+    `source path/to/bash-wakatime.sh`
+
+  - But if you already have a PROMPT_COMMAND variable set,
     just merge yout own pre_prompt_command with the following one.
     And don't forget to create and configure your "~/.wakatime.cfg" file.
 
