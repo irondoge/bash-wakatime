@@ -16,4 +16,4 @@ pre_prompt_command() {
     (wakatime --write --plugin "bash-wakatime/0.0.1" --entity-type app --project Terminal --entity "$(echo $(fc -ln -0) | cut -d ' ' -f1)" 2>&1 > /dev/null &)
 }
 
-PROMPT_COMMAND=pre_prompt_command
+PROMPT_COMMAND="pre_prompt_command; $PROMPT_COMMAND"
