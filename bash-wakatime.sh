@@ -10,7 +10,7 @@
 
 # hook function to send wakatime a tick
 pre_prompt_command() {
-    version="0.0.1"
+    version="1.0.0"
     entity=$(echo $(fc -ln -0) | cut -d ' ' -f1)
     [ -z "$entity" ] && return # $entity is empty or only whitespace
     git status &> /dev/null && local project="$(basename $(git rev-parse --show-toplevel))" || local project="Terminal"
