@@ -10,8 +10,11 @@
 
 # hook function to send wakatime a tick
 pre_prompt_command() {
+    version="1.0.0"
+    entity=$(echo $(fc -ln -0) | cut -d ' ' -f1)
+    [ -z "$entity" ] && return # $entity is empty or only whitespace
     git status &> /dev/null && local project="$(basename $(git rev-parse --show-toplevel))" || local project="Terminal"
-    (wakatime --write --plugin "bash-wakatime/0.0.1" --entity-type app --project "$project" --entity "$(echo $(fc -ln -0) | cut -d ' ' -f1)" 2>&1 > /dev/null &)
+    (wakatime --write --plugin "bash-wakatime/$version" --entity-type app --project "$project" --entity "$entity" 2>&1 > /dev/null &)
 }
 
 PROMPT_COMMAND="pre_prompt_command; $PROMPT_COMMAND"
