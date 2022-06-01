@@ -8,7 +8,7 @@ if [[ $(uname -m) == "aarch64" ]]; then
   arch="arm64"
 fi
 
-extract_to="$HOME/.wakatime/"
+extract_to="$HOME/.wakatime"
 
 os="unknown"
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
