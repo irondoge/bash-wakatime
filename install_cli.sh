@@ -37,6 +37,9 @@ if [[ "$os" == "windows" ]]; then
 fi
 url="https://github.com/wakatime/wakatime-cli/releases/latest/download/wakatime-cli-${os}-${arch}.zip"
 
+# make dir if not exists
+mkdir -p "$extract_to"
+
 cd "$extract_to"
 
 echo "Downloading wakatime-cli to $zip_file ..."
