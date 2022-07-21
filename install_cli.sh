@@ -8,7 +8,7 @@ if [[ $(uname -m) == "aarch64" ]]; then
   arch="arm64"
 fi
 
-extract_to="$HOME/.wakatime/"
+extract_to="$HOME/.wakatime"
 
 os="unknown"
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
@@ -36,6 +36,9 @@ if [[ "$os" == "windows" ]]; then
   extracted_binary="$extracted_binary.exe"
 fi
 url="https://github.com/wakatime/wakatime-cli/releases/latest/download/wakatime-cli-${os}-${arch}.zip"
+
+# make dir if not exists
+mkdir -p "$extract_to"
 
 cd "$extract_to"
 
